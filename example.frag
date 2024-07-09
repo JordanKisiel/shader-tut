@@ -27,8 +27,9 @@ void main() {
     //pixel (screen fragment)
     //this is called varying bc it differs from thread to thread
     vec2 st = gl_FragCoord.xy / u_resolution;
+    vec2 mt = u_mouse;
 
     //must return a color at the end
     //by assigning it to reserved global variable "gl_FragColor"
-    gl_FragColor = vec4(st.x * redOssc, st.y * greenOssc, blueOssc, 1.0);
+    gl_FragColor = vec4(mt.x * st.x * redOssc, mt.y * st.y * greenOssc, mt.x * mt.y * blueOssc, 1.0);
 }
