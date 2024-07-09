@@ -19,6 +19,10 @@ function draw() {
 
     background(200)
 
+    //uniforms must be set in the draw function if you want them to change over time
+    //basically true of anything you want to change over time
+    exampleShader.setUniform("u_time", millis())
+
     //run shader
     //note: width and height are global variables that automatically refer to the
     //dimensions of the canvas
