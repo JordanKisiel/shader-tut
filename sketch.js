@@ -22,10 +22,10 @@ function draw() {
     //uniforms must be set in the draw function if you want them to change over time
     //basically true of anything you want to change over time
     exampleShader.setUniform("u_time", millis())
+    exampleShader.setUniform("u_resolution", [width * 1.0, height * 1.0])
 
     //run shader
     //note: width and height are global variables that automatically refer to the
     //dimensions of the canvas
-    ellipse(0, 0, width, height, 150)
-    fill(255, 255, 255)
+    rect(0, 0, width, height)
 }
